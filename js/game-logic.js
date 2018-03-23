@@ -36,7 +36,7 @@ function handleMouseClick(e) {
 
 window.onload = function()  {
     canvas = document.getElementById('gameCanvas');
-    context = canvas.getContext('2d');
+    context = canvas.getContext('2d');  // used t odraw lines,circles,rectangles etc
 
     var framesPerSecond = 30;
     setInterval(function() {
@@ -45,8 +45,10 @@ window.onload = function()  {
 
     }, 1000/framesPerSecond);
 
-    canvas.addEventListener('mousedown', handleMouseClick);
-
+    canvas.addEventListener('mousedown', handleMouseClick); //HTML DOM events allow JavaScript to
+                                                         //register different event handlers on elements in an HTML document.
+                                                        //Events are normally used in combination with functions, 
+                                                        //and the function will not be executed before the event occurs like mouse click
     canvas.addEventListener('mousemove', function(e) {
         var mousePos = calculateMousePos(e);
         paddleLeftY = mousePos.y - (PADDLE_HEIGHT/2);
